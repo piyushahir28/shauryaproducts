@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Shaurya Products</title>
+
+	<!--The given link is for Bootstrap(Version-4.5.2)-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  		
+  	<!--The given link is for Social Media Icons-->
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+
+
+  	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	
+	<link rel="stylesheet" href="mycss.css">
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-secondary fixed-top">
+        <a href="#" class="navbar-brand">Shaurya Products</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse1">
+        	<ul class="nav navbar-nav">
+				<li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">Products</a></li>
+	       	</ul>
+	      	<ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="#mySignUp" data-toggle="modal" class="nav-link"><i class="fas fa-sign-in-alt"></i> Sign Up</a></li>
+	        	<li class="nav-item"><a href="#mySignIn" data-toggle="modal" class="nav-link"><i class="fas fa-user-tie"></i> Login</a></li>
+	        	<a href="#myAdmin" data-toggle="modal" class="nav-link"><button type="submit" class="btn btn-outline-light">Admin</button></a>
+	      	</ul>        
+	    </div>
+    </nav>
+
+    <!--Here is the code for Sign-In Form(It open in a modal window which was created using Bootstrap)-->
+	<div class="modal" id="mySignIn">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+		       		<button type="button" class="close" data-dismiss="modal"> &times; </button>
+		        </div>
+		      	<div class="modal-body">
+			       	<form action="signin.php" method="post" class="sign-in-form" id="formhai">
+			            <h2 class="title">Sign in</h2>
+			        	<div class="input-field">
+			              	<i class="fas fa-user"></i>
+			              	<input type="text" placeholder="Username" name="uname" id="uname" required />
+			            </div>
+			           	<div class="input-field">
+			              	<i class="fas fa-lock"></i>
+			              	<input type="password" placeholder="Password" name="psw" id="psw" required />
+			            </div>
+			            <input type="submit" name="login_user" value="Login" class="btns solid" />
+			            <p class="social-text">New User?<a data-dismiss="modal" data-toggle="modal" href="#mySignUp">Create an Account</a></p>
+			            <p class="social-text">Or Sign in with social platforms</p>
+			            <div class="social-media">
+				            <a href="#" class="social-icon">
+				                <i class="fab fa-facebook-f"></i>
+				   			</a>
+				   			<a href="#" class="social-icon">
+				            	<i class="fab fa-twitter"></i>
+				            </a>
+				            <a href="#" class="social-icon">
+				           		<i class="fab fa-google"></i>
+				            </a>
+				            <a href="#" class="social-icon">
+				            	<i class="fab fa-linkedin-in"></i>
+				            </a>
+			            </div>
+			        </form>
+		        </div>
+		    </div>
+	    </div>
+	</div>
+
+		<!--Here is the code for Sign-Up Form(It open in a modal window which was created usin Bootstrap)-->
+		<div class="modal" id="mySignUp">
+			<div class="modal-dialog">
+		   		<div class="modal-content">
+					<div class="modal-header">
+		          		<button type="button" class="close" data-dismiss="modal"> &times; </button>
+		        	</div>
+			      	<div class="modal-body">
+			        	<form action="signup.php" method="post" class="sign-up-form" id="formhai">
+			            	<h2 class="title">Sign Up</h2>
+			            	<div class="input-field">
+			            		<i class="fas fa-user"></i>
+			              		<input type="text" placeholder="Username" name="uname" id="uname" required />
+			            	</div>
+			            	<div class="input-field">
+			            		<i class="fas fa-phone"></i>
+			            		<input type="text" id="number" name="number" placeholder="Contact Number" required pattern="[0-9]{10}"0 >
+			           		</div>
+			           		<div class="input-field">
+			            		<i class="fas fa-mail-bulk"></i>
+			            		<input type="email" id="email" name="email"placeholder="E-mail" required>
+			           		</div>
+			           		<div class="input-field">
+			            		<i class="fas fa-birthday-cake"></i>
+			            		<input type='date' id='dateOfBirth' name='dob' value='2000-01-01'>
+			           		</div>
+			           		<div class="input-field">
+			              		<i class="fas fa-lock"></i>
+			              		<input type="password" placeholder="Password" name="psw" id="psw" required />
+			            	</div>
+			            		
+			            	<input type="submit" name="sign_user" value="Sign Up" class="btns solid" />
+			            	<p class="social-text">Already have an Account?<a data-dismiss="modal" data-toggle="modal" href="#mySignIn">Login</a></p>
+			            	<p class="social-text">Or Sign-up with social platforms</p>
+			            	<div class="social-media">
+			              		<a href="#" class="social-icon">
+			                		<i class="fab fa-facebook-f"></i>
+			              		</a>
+			              		<a href="#" class="social-icon">
+			               			<i class="fab fa-twitter"></i>
+			              		</a>
+			              		<a href="#" class="social-icon">
+			               			<i class="fab fa-google"></i>
+			              		</a>
+			             		<a href="#" class="social-icon">
+			                		<i class="fab fa-linkedin-in"></i>
+			             		</a>
+			            	</div>
+			          	</form>
+			        </div>
+			    </div>
+		    </div>
+		</div>
+
+	<div class="modal" id="myAdmin">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+		       		<button type="button" class="close" data-dismiss="modal"> &times; </button>
+		        </div>
+		      	<div class="modal-body">
+			       	<form action="signin.php" method="post" class="sign-in-form" id="formhai">
+			            <h2 class="title">ADMIN</h2>
+			        	<div class="input-field">
+			              	<i class="fas fa-user"></i>
+			              	<input type="text" placeholder="Username" name="uname" id="uname" required />
+			            </div>
+			           	<div class="input-field">
+			              	<i class="fas fa-lock"></i>
+			              	<input type="password" placeholder="Password" name="psw" id="psw" required />
+			            </div>
+			            <input type="submit" name="login_admin" value="Login" class="btns solid" />
+			        </form>
+		        </div>
+		    </div>
+	    </div>
+	</div>
+		<br><br>
+
+</body>
+</html>
