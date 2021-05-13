@@ -1,4 +1,4 @@
-#**Shaurya Products** 
+# **Shaurya Products** 
 A mini order management project which was developed by me to crack the technical round of Buzztaro. 
 
 # Why Shaurya Products:
